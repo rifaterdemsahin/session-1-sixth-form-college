@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How to Make Session 1 Video Better</title>
+  <title>✨ How to Make Session 1 Video Better</title>
   <meta name="description" content="Actionable post-production and next-session recording improvements for Sixth Form College Session 1." />
   <style>
     :root {
@@ -19,29 +19,39 @@
     * { box-sizing: border-box; }
     body {
       margin: 0; background: var(--bg); color: var(--fg);
-      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
     }
     header { border-bottom: 1px solid var(--line); background: var(--card); }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 18px; }
     header .wrap { padding-top: 24px; padding-bottom: 20px; }
     .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .eyebrow { color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
     nav a {
       color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
-      padding: 4px 10px; border: 1px solid var(--line); border-radius: 8px;
+      padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px;
     }
     nav a:hover { background: var(--code); }
     .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .pill { border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; font-size: 13px; color: var(--muted); }
     .pill b { color: var(--fg); font-weight: 600; }
-    main { padding: 24px 0 64px; }
-    #doc h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -.02em; }
-    #doc h2 { margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 22px; }
+    main { padding: 24px 0 72px; }
+    #doc h1 { font-size: 30px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.02em; }
+    #doc h2 { margin-top: 42px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 22px; }
     #doc h3 { margin-top: 24px; font-size: 18px; }
     #doc a { color: var(--accent); }
-    #doc code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+    #doc code { background: var(--code); padding: 1px 6px; border-radius: 4px; font-size: .9em; }
     #doc li { margin: 6px 0; }
     #doc input[type=checkbox] { margin-right: 6px; }
+    .diagram-box {
+      margin: 18px 0 24px;
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow-x: auto;
+      text-align: center;
+    }
+    .diagram-box svg { max-width: 100%; height: auto; }
     .err { color: #c0392b; }
   </style>
 </head>
@@ -49,12 +59,12 @@
   <header>
     <div class="wrap">
       <div class="top-bar">
-        <div class="eyebrow">Session 1 · Production &amp; Edit Improvements Guide</div>
+        <div class="eyebrow">✨ Session 1 · Production &amp; Edit Improvements Guide</div>
         <nav><a href="index.html">← Edit Plan</a></nav>
       </div>
       <div class="pills">
-        <span class="pill">Now: <b>Audio polish, zoom callouts, pacing, captions</b></span>
-        <span class="pill">Next session: <b>16:9 OBS, 30 fps match, wider ZV-1 framing</b></span>
+        <span class="pill">🎛️ Now: <b>-16 LUFS audio, zoom callouts, pacing, captions</b></span>
+        <span class="pill">🎥 Next session: <b>16:9 OBS, 30 fps match, wider ZV-1 framing</b></span>
       </div>
     </div>
   </header>
@@ -62,11 +72,34 @@
     <article id="doc">Loading guide…</article>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script>
+    const isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: isDark ? "dark" : "default",
+      securityLevel: "loose",
+      flowchart: { curve: "basis", htmlLabels: true }
+    });
+
     fetch("IMPROVEMENTS.md", { cache: "no-cache" })
       .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-      .then(md => {
-        document.getElementById("doc").innerHTML = marked.parse(md, { gfm: true });
+      .then(async md => {
+        const el = document.getElementById("doc");
+        el.innerHTML = marked.parse(md, { gfm: true });
+        const blocks = el.querySelectorAll("pre > code.language-mermaid");
+        blocks.forEach((codeEl, idx) => {
+          const pre = codeEl.parentElement;
+          const wrap = document.createElement("div");
+          wrap.className = "diagram-box";
+          const div = document.createElement("div");
+          div.className = "mermaid";
+          div.id = "mmd-" + idx;
+          div.textContent = codeEl.textContent;
+          wrap.appendChild(div);
+          pre.replaceWith(wrap);
+        });
+        await mermaid.run({ querySelector: ".mermaid" });
       })
       .catch(e => {
         document.getElementById("doc").innerHTML =

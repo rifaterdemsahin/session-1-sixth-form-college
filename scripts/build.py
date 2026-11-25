@@ -174,14 +174,19 @@ def render_composition_html(
 
     card_divs = "\n".join(
         f'      <div class="chapter-card" id="{c["id"]}">'
+        f'<div class="ch-bar"></div>'
+        f'<div class="ch-body">'
         f'<span class="ch-eyebrow">{html.escape(c["label"])}</span>'
-        f'<span class="ch-title">{html.escape(c["title"])}</span></div>'
+        f'<span class="ch-title">{html.escape(c["title"])}</span>'
+        f'</div></div>'
         for c in chapter_cards
     )
 
     card_anim_js = "\n".join(
-        f'    tl.fromTo("#{c["id"]}", {{ opacity: 0, y: 18 }}, {{ opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }}, {c["start"]});\n'
-        f'    tl.to("#{c["id"]}", {{ opacity: 0, y: -10, duration: 0.45, ease: "power2.in" }}, {round(c["start"] + 3.2, 3)});'
+        f'    tl.fromTo("#{c["id"]}", {{ opacity: 0, x: -36, scale: 0.96 }}, {{ opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }}, {c["start"]});\n'
+        f'    tl.fromTo("#{c["id"]} .ch-bar", {{ scaleY: 0 }}, {{ scaleY: 1, duration: 0.4, ease: "power2.out" }}, {round(c["start"] + 0.08, 3)});\n'
+        f'    tl.fromTo("#{c["id"]} .ch-title", {{ opacity: 0, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }}, {round(c["start"] + 0.14, 3)});\n'
+        f'    tl.to("#{c["id"]}", {{ opacity: 0, x: -24, duration: 0.45, ease: "power2.in" }}, {round(c["start"] + 3.6, 3)});'
         for c in chapter_cards
     )
 
@@ -241,28 +246,45 @@ def render_composition_html(
       bottom: 48px;
       z-index: 10;
       display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 16px 24px;
+      align-items: stretch;
+      gap: 0;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.88);
-      border-left: 4px solid #3b82f6;
-      color: #f8fafc;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.96);
+      color: #111827;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 0 2px rgba(220, 38, 38, 0.35);
       opacity: 0;
       pointer-events: none;
-      backdrop-filter: blur(8px);
+    }}
+    .ch-bar {{
+      width: 10px;
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+      transform-origin: top center;
+    }}
+    .ch-body {{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 26px 16px 22px;
     }}
     .ch-eyebrow {{
-      font-size: 13px;
-      letter-spacing: 0.08em;
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 12px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #93c5fd;
-      font-weight: 600;
+      background: #dc2626;
+      color: #ffffff;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 700;
     }}
     .ch-title {{
-      font-size: 26px;
-      font-weight: 700;
+      font-size: 28px;
+      font-weight: 800;
       line-height: 1.2;
+      color: #991b1b;
+      letter-spacing: -0.02em;
     }}
   </style>
 </head>

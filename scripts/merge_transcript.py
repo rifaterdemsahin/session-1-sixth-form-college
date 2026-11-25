@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -15,6 +16,38 @@ SOURCES_PATH = REPO_ROOT / "edit" / "sources.json"
 SYNC_PATH = REPO_ROOT / "edit" / "sync.json"
 WHISPER_DIR = REPO_ROOT / ".cache" / "whisper"
 OUT_TRANSCRIPT = REPO_ROOT / "edit" / "transcript.json"
+
+# Domain-specific AI training course spelling corrections for Whisper transcripts
+SPELLING_FIXES: list[tuple[re.Pattern[str], str]] = [
+    (re.compile(r"\b[Cc]loud\s+[Cc]ode\b"), "Claude Code"),
+    (re.compile(r"\b[Cc]loud\s+[Aa][Ii]\b"), "Claude AI"),
+    (re.compile(r"\b[Cc]loud\s+[Dd]esktop\b"), "Claude Desktop"),
+    (re.compile(r"\b[Cc]loud\s+[Ss]onnet\b"), "Claude Sonnet"),
+    (re.compile(r"\b[Cc]loud\s+[Oo]pus\b"), "Claude Opus"),
+    (re.compile(r"\b[Cc]loud\s+[Hh]aiku\b"), "Claude Haiku"),
+    (re.compile(r"\b[Cc]loud's\b"), "Claude's"),
+    # General "cloud" -> "Claude" except when followed by cloud-infra terms
+    (
+        re.compile(
+            r"\b[Cc]loud\b(?!\s+(?:flare|computing|storage|server|servers|service|services|provider|providers|platform|native|hosted|hosting|based|sync|drive|backup|infrastructure))"
+        ),
+        "Claude",
+    ),
+    (re.compile(r"\b[Cc]loudflare\b"), "Cloudflare"),
+    (re.compile(r"\b[Aa]nthropic\b|\b[Aa]ntropic\b"), "Anthropic"),
+    (re.compile(r"\b[Cc]hat\s*[Gg][PpBb][Tt]\b|\b[Cc]hachi\s*[Pp][Tt]\b"), "ChatGPT"),
+    (re.compile(r"\b[Oo]pen\s*[Aa][Ii]\b"), "OpenAI"),
+    (re.compile(r"\b[Gg]it\s*[Hh]ub\b"), "GitHub"),
+    (re.compile(r"\b[Hh]yper\s*[Ff]rames?\b"), "HyperFrames"),
+    (re.compile(r"\b[Vv][Ss]\s*[Cc]ode\b"), "VS Code"),
+    (re.compile(r"\b[Aa]nti[\s-]*gravity\b"), "Antigravity"),
+]
+
+
+def fix_ai_spelling(text: str) -> str:
+    for pat, repl in SPELLING_FIXES:
+        text = pat.sub(repl, text)
+    return text
 
 
 def fmt_tc(sec: float) -> str:
@@ -43,14 +76,14 @@ def main() -> int:
         for seg in data.get("segments", []):
             m_start = round(offset + float(seg["start"]), 3)
             m_end = round(offset + float(seg["end"]), 3)
-            text = seg.get("text", "").strip()
+            text = fix_ai_spelling(seg.get("text", "").strip())
             if not text:
                 continue
             words = []
             for w in seg.get("words", []):
                 words.append(
                     {
-                        "word": w.get("word", ""),
+                        "word": fix_ai_spelling(w.get("word", "")),
                         "start": round(offset + float(w["start"]), 3),
                         "end": round(offset + float(w["end"]), 3),
                     }

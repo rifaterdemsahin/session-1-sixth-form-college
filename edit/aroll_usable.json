@@ -195,7 +195,7 @@
     },
     {
       "id": "R10",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (85% face, sharp 162.1); good PiP overlay",
       "arollId": "aroll/C1201.MP4",
@@ -214,7 +214,7 @@
     },
     {
       "id": "R11",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (78% face, sharp 170.9); good PiP overlay",
       "arollId": "aroll/C1201.MP4",
@@ -233,7 +233,7 @@
     },
     {
       "id": "R12",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (100% face, sharp 173.4); good PiP overlay",
       "arollId": "aroll/C1201.MP4",
@@ -252,7 +252,7 @@
     },
     {
       "id": "R13",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (100% face, sharp 147.5); good PiP overlay",
       "arollId": "aroll/C1201.MP4",
@@ -290,7 +290,7 @@
     },
     {
       "id": "R15",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (80% face, sharp 103.0); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -309,7 +309,7 @@
     },
     {
       "id": "R16",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (75% face, sharp 120.1); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -366,7 +366,7 @@
     },
     {
       "id": "R19",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (89% face, sharp 172.4); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -385,7 +385,7 @@
     },
     {
       "id": "R20",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (93% face, sharp 178.6); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -423,7 +423,7 @@
     },
     {
       "id": "R22",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (80% face, sharp 138.6); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -442,7 +442,7 @@
     },
     {
       "id": "R23",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (75% face, sharp 147.6); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -461,7 +461,7 @@
     },
     {
       "id": "R24",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (89% face, sharp 122.3); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -499,7 +499,7 @@
     },
     {
       "id": "R26",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "screen+pip",
       "reason": "Presenter speaking in frame (60% face, sharp 162.2); good PiP overlay",
       "arollId": "aroll/C1202.MP4",
@@ -518,7 +518,7 @@
     },
     {
       "id": "R27",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "aroll",
       "reason": "Closing/outro segment (12s), clear framing (67% face), sharpness 133.7",
       "arollId": "aroll/C1202.MP4",
@@ -537,7 +537,7 @@
     },
     {
       "id": "R28",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "aroll",
       "reason": "Closing/outro segment (8s), clear framing (100% face), sharpness 128.4",
       "arollId": "aroll/C1202.MP4",
@@ -556,7 +556,7 @@
     },
     {
       "id": "R29",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "aroll",
       "reason": "Closing/outro segment (14s), clear framing (71% face), sharpness 139.2",
       "arollId": "aroll/C1202.MP4",
@@ -575,7 +575,7 @@
     },
     {
       "id": "R30",
-      "approved": false,
+      "approved": true,
       "suggestedLayout": "aroll",
       "reason": "Closing/outro segment (14s), clear framing (86% face), sharpness 142.5",
       "arollId": "aroll/C1202.MP4",
@@ -592,5 +592,6 @@
       "speechRms": 0.00347,
       "thumbnail": ".cache/review/R30.jpg"
     }
-  ]
+  ],
+  "approvedCount": 16
 }

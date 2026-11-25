@@ -1,0 +1,9 @@
+.DS_Store
+.cache/
+edit/assets/
+renders/
+*.mp4
+*.MP4
+*.wav
+*.WAV
+node_modules/

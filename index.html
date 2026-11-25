@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1 Edit Plan</title>
+  <meta name="description" content="HyperFrames edit plan for Sixth Form College Session 1: OBS screen leads, Zoom H1n audio, ZV-1 A-roll only when in frame." />
+  <style>
+    :root {
+      --bg: #f7f7f5; --fg: #1c1c1e; --muted: #6b6b70; --card: #ffffff;
+      --line: #e3e3e0; --accent: #2f5bd3; --code: #f0f0ed;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #121214; --fg: #ececee; --muted: #9a9aa2; --card: #1b1b1f;
+        --line: #2c2c32; --accent: #8aa8ff; --code: #232329;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #121214; --fg: #ececee; --muted: #9a9aa2; --card: #1b1b1f;
+      --line: #2c2c32; --accent: #8aa8ff; --code: #232329;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
+    header { border-bottom: 1px solid var(--line); background: var(--card); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+    header .wrap { padding-top: 28px; padding-bottom: 22px; }
+    .eyebrow { color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; font-size: 13px; color: var(--muted); }
+    .pill b { color: var(--fg); font-weight: 600; }
+    main { padding: 24px 0 64px; }
+    #plan h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -.02em; }
+    #plan h2 { margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 22px; }
+    #plan h3 { margin-top: 28px; font-size: 18px; }
+    #plan a { color: var(--accent); }
+    #plan blockquote { margin: 16px 0; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--card); color: var(--muted); }
+    #plan code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+    #plan pre { background: var(--code); padding: 14px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+    #plan pre code { background: none; padding: 0; }
+    #plan .table { overflow-x: auto; }
+    #plan table { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--card); }
+    #plan th, #plan td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    #plan th { background: var(--code); }
+    #plan li { margin: 4px 0; }
+    #plan input[type=checkbox] { margin-right: 6px; }
+    .err { color: #c0392b; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">HyperFrames · Edit plan · Handover to Antigravity</div>
+      <div class="pills">
+        <span class="pill">Picture: <b>OBS screen leads</b></span>
+        <span class="pill">Audio: <b>Zoom H1n only</b></span>
+        <span class="pill">A-roll: <b>ZV-1, only when in frame</b></span>
+        <span class="pill">Sync: <b>audio cross-correlation</b></span>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <article id="plan">Loading plan…</article>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script>
+    fetch("PLAN.md", { cache: "no-cache" })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(md => {
+        const el = document.getElementById("plan");
+        el.innerHTML = marked.parse(md, { gfm: true });
+        el.querySelectorAll("table").forEach(t => {
+          const w = document.createElement("div"); w.className = "table";
+          t.replaceWith(w); w.appendChild(t);
+        });
+      })
+      .catch(e => {
+        document.getElementById("plan").innerHTML =
+          '<p class="err">Could not load PLAN.md (' + e.message + '). Open <a href="PLAN.md">PLAN.md</a> directly.</p>';
+      });
+  </script>
+</body>
+</html>

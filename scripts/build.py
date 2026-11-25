@@ -105,6 +105,8 @@ def render_composition_html(
     chapter_cards: list[dict] = []
 
     out_cursor = 0.0
+    v_idx = 0
+    a_idx = 0
     for ch_idx, ch in enumerate(chapters):
         ch_start = out_cursor
         ch_title = ch.get("title", ch.get("id", f"Chapter {ch_idx + 1}"))
@@ -131,10 +133,11 @@ def render_composition_html(
             if layout in ("screen", "screen+pip"):
                 for c in cover_range(by_kind["screen"], m_in, m_out, out_cursor):
                     video_tags.append(
-                        f'      <video class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                        f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
                         f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                         f'data-media-start="{c["mediaStart"]}" data-track-index="0"></video>'
                     )
+                    v_idx += 1
 
             # Layer 1: ZV-1 A-roll (ONLY when layout is screen+pip or aroll)
             if layout in ("screen+pip", "aroll"):
@@ -144,16 +147,18 @@ def render_composition_html(
                     # Safety fallback to screen if A-roll doesn't cover this master range
                     for c in cover_range(by_kind["screen"], m_in, m_out, out_cursor):
                         video_tags.append(
-                            f'      <video class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                            f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
                             f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                             f'data-media-start="{c["mediaStart"]}" data-track-index="0"></video>'
                         )
+                        v_idx += 1
                 for c in ar_clips:
                     video_tags.append(
-                        f'      <video class="{cls}" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                        f'      <video id="aroll-{v_idx}" class="{cls}" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
                         f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                         f'data-media-start="{c["mediaStart"]}" data-track-index="1"></video>'
                     )
+                    v_idx += 1
 
             # Layer 2: Zoom H1n audio ONLY
             au_clips = cover_range(by_kind["audio"], m_in, m_out, out_cursor)
@@ -161,12 +166,13 @@ def render_composition_html(
                 fade_in = min(FADE_SEC, c["duration"] / 3.0) if idx_a == 0 else 0.05
                 fade_out = min(FADE_SEC, c["duration"] / 3.0) if idx_a == len(au_clips) - 1 else 0.05
                 audio_tags.append(
-                    f'      <audio src="{html.escape(c["assetPath"])}" preload="auto" '
+                    f'      <audio id="audio-{a_idx}" src="{html.escape(c["assetPath"])}" preload="auto" '
                     f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                     f'data-media-start="{c["mediaStart"]}" data-volume="1" '
                     f'data-fade-in="{fade_in:.2f}" data-fade-out="{fade_out:.2f}" '
                     f'data-track-index="2"></audio>'
                 )
+                a_idx += 1
 
             out_cursor += seg_dur
 

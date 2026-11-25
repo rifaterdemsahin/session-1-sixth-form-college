@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎬 Render Hub — Session 1 (HyperFrames)</title>
+  <style>
+    :root {
+      --bg: #0f1117; --fg: #f1f5f9; --muted: #94a3b8; --card: #181c26;
+      --line: #293040; --accent: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
+    header { border-bottom: 3px solid var(--accent); background: var(--card); padding: 20px 18px; }
+    .wrap { max-width: 1080px; margin: 0 auto; }
+    .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .eyebrow {
+      background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
+    }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a {
+      color: var(--fg); text-decoration: none; font-size: 14px;
+      padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px;
+    }
+    nav a:hover { border-color: var(--accent); color: #fca5a5; }
+    main { padding: 24px 18px 64px; }
+    .hero {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 20px; margin-bottom: 24px;
+    }
+    .hero h1 { margin: 0 0 6px; font-size: 24px; }
+    .hero p { margin: 0 0 14px; color: var(--muted); }
+    video { width: 100%; border-radius: 10px; background: #000; display: block; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px;
+    }
+    .card h2 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+    code { background: #232838; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+    .badge {
+      display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 999px; background: #14532d; color: #86efac; margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap top-bar">
+      <div class="eyebrow">🎬 Session 1 · Render Hub</div>
+      <nav>
+        <a href="index.html">📋 Plan</a>
+        <a href="specs.html">📐 Specs</a>
+        <a href="improvements.html">✨ Improvements</a>
+        <a href="recommendations.html">🎯 Recommendations</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <h1>HyperFrames Sample Render — OBS Screen + Approved PiP (R10) + Red/White Animated Title <span class="badge">Ready</span></h1>
+      <p>Output path: <code>renders/preview/session-1-preview.mp4</code> · 1920×1080 @ 30 fps · Audio: Zoom H1n ONLY (OBS &amp; ZV-1 muted).</p>
+      <video controls preload="metadata" src="renders/preview/session-1-preview.mp4"></video>
+    </section>
+
+    <h2>🎯 Phase A — Lip-Sync Verification Clips</h2>
+    <div class="grid">
+      <div class="card">
+        <h2>Start — Master 00:06:51.93</h2>
+        <p><code>renders/sync_check/sync_check_1_start.mp4</code></p>
+        <video controls preload="metadata" src="renders/sync_check/sync_check_1_start.mp4"></video>
+      </div>
+      <div class="card">
+        <h2>Middle — Master 01:16:19.31</h2>
+        <p><code>renders/sync_check/sync_check_2_middle.mp4</code></p>
+        <video controls preload="metadata" src="renders/sync_check/sync_check_2_middle.mp4"></video>
+      </div>
+      <div class="card">
+        <h2>End — Master 02:17:28.49</h2>
+        <p><code>renders/sync_check/sync_check_3_end.mp4</code></p>
+        <video controls preload="metadata" src="renders/sync_check/sync_check_3_end.mp4"></video>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

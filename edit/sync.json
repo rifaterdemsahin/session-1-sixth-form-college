@@ -1,0 +1,321 @@
+{
+  "masterReference": "screen/2026-11-25_17-51-53.mp4",
+  "generatedAt": "2026-11-25T22:59:31",
+  "confidenceThreshold": 8.0,
+  "flaggedCount": 0,
+  "flaggedFiles": [],
+  "files": {
+    "screen/2026-11-25_17-51-53.mp4": {
+      "kind": "screen",
+      "masterOffset": 0.0,
+      "masterOffsetMs": 0.0,
+      "masterOffsetFrames30": 0.0,
+      "nominalStart": 0.0,
+      "deltaFromNominalSec": 0.0,
+      "confidence": 49.65,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_17-59-57.mp4": {
+      "kind": "screen",
+      "masterOffset": 483.2641,
+      "masterOffsetMs": 483264.1,
+      "masterOffsetFrames30": 14497.92,
+      "nominalStart": 484.0,
+      "deltaFromNominalSec": -0.7359,
+      "confidence": 49.48,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-08-00.mp4": {
+      "kind": "screen",
+      "masterOffset": 966.6149,
+      "masterOffsetMs": 966614.9,
+      "masterOffsetFrames30": 28998.45,
+      "nominalStart": 967.0,
+      "deltaFromNominalSec": -0.3851,
+      "confidence": 77.42,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-16-04.mp4": {
+      "kind": "screen",
+      "masterOffset": 1450.3698,
+      "masterOffsetMs": 1450369.8,
+      "masterOffsetFrames30": 43511.1,
+      "nominalStart": 1451.0,
+      "deltaFromNominalSec": -0.6302,
+      "confidence": 68.52,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-24-05.mp4": {
+      "kind": "screen",
+      "masterOffset": 1931.18,
+      "masterOffsetMs": 1931180.0,
+      "masterOffsetFrames30": 57935.4,
+      "nominalStart": 1932.0,
+      "deltaFromNominalSec": -0.82,
+      "confidence": 55.88,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-32-05.mp4": {
+      "kind": "screen",
+      "masterOffset": 2411.4129,
+      "masterOffsetMs": 2411412.9,
+      "masterOffsetFrames30": 72342.39,
+      "nominalStart": 2412.0,
+      "deltaFromNominalSec": -0.5871,
+      "confidence": 40.8,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-40-08.mp4": {
+      "kind": "screen",
+      "masterOffset": 2894.3185,
+      "masterOffsetMs": 2894318.5,
+      "masterOffsetFrames30": 86829.56,
+      "nominalStart": 2895.0,
+      "deltaFromNominalSec": -0.6815,
+      "confidence": 75.59,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-48-09.mp4": {
+      "kind": "screen",
+      "masterOffset": 3375.0602,
+      "masterOffsetMs": 3375060.2,
+      "masterOffsetFrames30": 101251.8,
+      "nominalStart": 3376.0,
+      "deltaFromNominalSec": -0.9398,
+      "confidence": 71.2,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_18-56-10.mp4": {
+      "kind": "screen",
+      "masterOffset": 3856.5531,
+      "masterOffsetMs": 3856553.1,
+      "masterOffsetFrames30": 115696.59,
+      "nominalStart": 3857.0,
+      "deltaFromNominalSec": -0.4469,
+      "confidence": 24.0,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-04-26.mp4": {
+      "kind": "screen",
+      "masterOffset": 4352.4081,
+      "masterOffsetMs": 4352408.1,
+      "masterOffsetFrames30": 130572.24,
+      "nominalStart": 4353.0,
+      "deltaFromNominalSec": -0.5919,
+      "confidence": 61.95,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-12-28.mp4": {
+      "kind": "screen",
+      "masterOffset": 4834.3758,
+      "masterOffsetMs": 4834375.8,
+      "masterOffsetFrames30": 145031.27,
+      "nominalStart": 4835.0,
+      "deltaFromNominalSec": -0.6242,
+      "confidence": 55.77,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-20-32.mp4": {
+      "kind": "screen",
+      "masterOffset": 5317.892,
+      "masterOffsetMs": 5317892.0,
+      "masterOffsetFrames30": 159536.76,
+      "nominalStart": 5319.0,
+      "deltaFromNominalSec": -1.108,
+      "confidence": 77.64,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-28-34.mp4": {
+      "kind": "screen",
+      "masterOffset": 5800.3643,
+      "masterOffsetMs": 5800364.3,
+      "masterOffsetFrames30": 174010.93,
+      "nominalStart": 5801.0,
+      "deltaFromNominalSec": -0.6357,
+      "confidence": 56.11,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-36-35.mp4": {
+      "kind": "screen",
+      "masterOffset": 6280.9824,
+      "masterOffsetMs": 6280982.4,
+      "masterOffsetFrames30": 188429.47,
+      "nominalStart": 6282.0,
+      "deltaFromNominalSec": -1.0176,
+      "confidence": 60.21,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-44-37.mp4": {
+      "kind": "screen",
+      "masterOffset": 6763.1581,
+      "masterOffsetMs": 6763158.1,
+      "masterOffsetFrames30": 202894.74,
+      "nominalStart": 6764.0,
+      "deltaFromNominalSec": -0.8419,
+      "confidence": 82.9,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_19-52-39.mp4": {
+      "kind": "screen",
+      "masterOffset": 7245.147,
+      "masterOffsetMs": 7245147.0,
+      "masterOffsetFrames30": 217354.41,
+      "nominalStart": 7246.0,
+      "deltaFromNominalSec": -0.853,
+      "confidence": 75.12,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_20-00-42.mp4": {
+      "kind": "screen",
+      "masterOffset": 7728.3006,
+      "masterOffsetMs": 7728300.6,
+      "masterOffsetFrames30": 231849.02,
+      "nominalStart": 7729.0,
+      "deltaFromNominalSec": -0.6994,
+      "confidence": 77.82,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "screen/2026-11-25_20-08-44.mp4": {
+      "kind": "screen",
+      "masterOffset": 8210.1347,
+      "masterOffsetMs": 8210134.7,
+      "masterOffsetFrames30": 246304.04,
+      "nominalStart": 8211.0,
+      "deltaFromNominalSec": -0.8653,
+      "confidence": 50.74,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "aroll/C1201.MP4": {
+      "kind": "aroll",
+      "masterOffset": 299.9273,
+      "masterOffsetMs": 299927.3,
+      "masterOffsetFrames25": 7498.18,
+      "masterOffsetFrames30": 8997.82,
+      "confidence": 204.89,
+      "flagged": false,
+      "rate": 1.0,
+      "driftCheck": {
+        "points": [
+          {
+            "srcSec": 290.11,
+            "masterSec": 590.0475,
+            "residualMs": 8.15,
+            "confidence": 22.14
+          },
+          {
+            "srcSec": 1015.39,
+            "masterSec": 1315.3185,
+            "residualMs": -0.81,
+            "confidence": 22.95
+          },
+          {
+            "srcSec": 1813.2,
+            "masterSec": 2113.1261,
+            "residualMs": -1.24,
+            "confidence": 21.1
+          },
+          {
+            "srcSec": 2611.01,
+            "masterSec": 2910.9389,
+            "residualMs": 3.55,
+            "confidence": 15.35
+          },
+          {
+            "srcSec": 3263.76,
+            "masterSec": 3563.6865,
+            "residualMs": -0.81,
+            "confidence": 21.4
+          }
+        ],
+        "estimatedDriftMs": -6.35,
+        "estimatedDriftFrames25": -0.159,
+        "rate": 1.0
+      }
+    },
+    "aroll/C1202.MP4": {
+      "kind": "aroll",
+      "masterOffset": 4375.3074,
+      "masterOffsetMs": 4375307.4,
+      "masterOffsetFrames25": 109382.68,
+      "masterOffsetFrames30": 131259.22,
+      "confidence": 219.87,
+      "flagged": false,
+      "rate": 1.0,
+      "driftCheck": {
+        "points": [
+          {
+            "srcSec": 319.53,
+            "masterSec": 4694.8412,
+            "residualMs": 7.82,
+            "confidence": 19.8
+          },
+          {
+            "srcSec": 1118.34,
+            "masterSec": 5493.65,
+            "residualMs": 0.6,
+            "confidence": 24.45
+          },
+          {
+            "srcSec": 1997.04,
+            "masterSec": 6372.347,
+            "residualMs": -0.35,
+            "confidence": 21.18
+          },
+          {
+            "srcSec": 2875.74,
+            "masterSec": 7251.0443,
+            "residualMs": -1.1,
+            "confidence": 25.53
+          },
+          {
+            "srcSec": 3594.67,
+            "masterSec": 7969.9848,
+            "residualMs": 5.46,
+            "confidence": 22.66
+          }
+        ],
+        "estimatedDriftMs": -3.29,
+        "estimatedDriftFrames25": -0.082,
+        "rate": 1.0
+      }
+    },
+    "audio/ZOOM0030.WAV": {
+      "kind": "audio",
+      "masterOffset": -218.8929,
+      "masterOffsetMs": -218892.9,
+      "masterOffsetFrames25": -5472.32,
+      "masterOffsetFrames30": -6566.79,
+      "confidence": 41.19,
+      "flagged": false,
+      "rate": 1.0
+    },
+    "audio/ZOOM0031.WAV": {
+      "kind": "audio",
+      "masterOffset": 4347.3689,
+      "masterOffsetMs": 4347368.9,
+      "masterOffsetFrames25": 108684.22,
+      "masterOffsetFrames30": 130421.07,
+      "confidence": 59.93,
+      "flagged": false,
+      "rate": 1.0
+    }
+  }
+}

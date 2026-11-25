@@ -4,6 +4,10 @@ edit/assets/
 renders/
 *.mp4
 *.MP4
+*.mov
+*.MOV
+*.mkv
+*.MKV
 *.wav
 *.WAV
 node_modules/

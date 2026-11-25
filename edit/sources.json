@@ -1,0 +1,574 @@
+{
+  "footageRoot": "/Users/rifaterdemsahin/Movies/sixth from first session/production",
+  "generatedAt": "2026-11-25T22:57:11",
+  "sources": [
+    {
+      "id": "screen/2026-11-25_17-51-53.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 17-51-53.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 17-51-53.mp4",
+      "assetPath": "assets/screen/2026-11-25_17-51-53.mp4",
+      "duration": 483.264,
+      "sizeBytes": 372798403,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T17:51:53",
+      "nominalStart": 0.0
+    },
+    {
+      "id": "screen/2026-11-25_17-59-57.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 17-59-57.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 17-59-57.mp4",
+      "assetPath": "assets/screen/2026-11-25_17-59-57.mp4",
+      "duration": 483.349333,
+      "sizeBytes": 372963965,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T17:59:57",
+      "nominalStart": 484.0
+    },
+    {
+      "id": "screen/2026-11-25_18-08-00.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-08-00.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-08-00.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-08-00.mp4",
+      "duration": 483.766667,
+      "sizeBytes": 373288541,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:08:00",
+      "nominalStart": 967.0
+    },
+    {
+      "id": "screen/2026-11-25_18-16-04.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-16-04.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-16-04.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-16-04.mp4",
+      "duration": 480.810667,
+      "sizeBytes": 371001749,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:16:04",
+      "nominalStart": 1451.0
+    },
+    {
+      "id": "screen/2026-11-25_18-24-05.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-24-05.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-24-05.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-24-05.mp4",
+      "duration": 480.234667,
+      "sizeBytes": 370658609,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:24:05",
+      "nominalStart": 1932.0
+    },
+    {
+      "id": "screen/2026-11-25_18-32-05.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-32-05.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-32-05.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-32-05.mp4",
+      "duration": 482.916667,
+      "sizeBytes": 372540140,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:32:05",
+      "nominalStart": 2412.0
+    },
+    {
+      "id": "screen/2026-11-25_18-40-08.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-40-08.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-40-08.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-40-08.mp4",
+      "duration": 480.746667,
+      "sizeBytes": 370953315,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:40:08",
+      "nominalStart": 2895.0
+    },
+    {
+      "id": "screen/2026-11-25_18-48-09.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-48-09.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-48-09.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-48-09.mp4",
+      "duration": 481.5,
+      "sizeBytes": 371543200,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:48:09",
+      "nominalStart": 3376.0
+    },
+    {
+      "id": "screen/2026-11-25_18-56-10.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 18-56-10.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 18-56-10.mp4",
+      "assetPath": "assets/screen/2026-11-25_18-56-10.mp4",
+      "duration": 206.4,
+      "sizeBytes": 159268066,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T18:56:10",
+      "nominalStart": 3857.0
+    },
+    {
+      "id": "screen/2026-11-25_19-04-26.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-04-26.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-04-26.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-04-26.mp4",
+      "duration": 481.962667,
+      "sizeBytes": 371783384,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:04:26",
+      "nominalStart": 4353.0
+    },
+    {
+      "id": "screen/2026-11-25_19-12-28.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-12-28.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-12-28.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-12-28.mp4",
+      "duration": 483.533333,
+      "sizeBytes": 373113522,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:12:28",
+      "nominalStart": 4835.0
+    },
+    {
+      "id": "screen/2026-11-25_19-20-32.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-20-32.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-20-32.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-20-32.mp4",
+      "duration": 482.474667,
+      "sizeBytes": 372290047,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:20:32",
+      "nominalStart": 5319.0
+    },
+    {
+      "id": "screen/2026-11-25_19-28-34.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-28-34.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-28-34.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-28-34.mp4",
+      "duration": 480.618667,
+      "sizeBytes": 370863038,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:28:34",
+      "nominalStart": 5801.0
+    },
+    {
+      "id": "screen/2026-11-25_19-36-35.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-36-35.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-36-35.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-36-35.mp4",
+      "duration": 482.183333,
+      "sizeBytes": 372070074,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:36:35",
+      "nominalStart": 6282.0
+    },
+    {
+      "id": "screen/2026-11-25_19-44-37.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-44-37.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-44-37.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-44-37.mp4",
+      "duration": 481.984,
+      "sizeBytes": 371916961,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:44:37",
+      "nominalStart": 6764.0
+    },
+    {
+      "id": "screen/2026-11-25_19-52-39.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 19-52-39.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 19-52-39.mp4",
+      "assetPath": "assets/screen/2026-11-25_19-52-39.mp4",
+      "duration": 483.157333,
+      "sizeBytes": 372819100,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T19:52:39",
+      "nominalStart": 7246.0
+    },
+    {
+      "id": "screen/2026-11-25_20-00-42.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 20-00-42.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 20-00-42.mp4",
+      "assetPath": "assets/screen/2026-11-25_20-00-42.mp4",
+      "duration": 481.834667,
+      "sizeBytes": 371804688,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T20:00:42",
+      "nominalStart": 7729.0
+    },
+    {
+      "id": "screen/2026-11-25_20-08-44.mp4",
+      "kind": "screen",
+      "filename": "2026-11-25 20-08-44.mp4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/screencapture/2026-11-25 20-08-44.mp4",
+      "assetPath": "assets/screen/2026-11-25_20-08-44.mp4",
+      "duration": 172.516667,
+      "sizeBytes": 133120707,
+      "video": {
+        "codec": "h264",
+        "width": 3456,
+        "height": 2234,
+        "fps": 60.0
+      },
+      "fps": 60.0,
+      "size": [
+        3456,
+        2234
+      ],
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 48000,
+        "channels": 2
+      },
+      "wallClockStart": "2026-11-25T20:08:44",
+      "nominalStart": 8211.0
+    },
+    {
+      "id": "aroll/C1201.MP4",
+      "kind": "aroll",
+      "filename": "C1201.MP4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/aroll/C1201.MP4",
+      "assetPath": "assets/aroll/C1201.MP4",
+      "duration": 3626.4,
+      "sizeBytes": 44691355839,
+      "video": {
+        "codec": "h264",
+        "width": 3840,
+        "height": 2160,
+        "fps": 25.0
+      },
+      "fps": 25.0,
+      "size": [
+        3840,
+        2160
+      ],
+      "audio": {
+        "codec": "pcm_s16be",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    {
+      "id": "aroll/C1202.MP4",
+      "kind": "aroll",
+      "filename": "C1202.MP4",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/aroll/C1202.MP4",
+      "assetPath": "assets/aroll/C1202.MP4",
+      "duration": 3994.08,
+      "sizeBytes": 49229698475,
+      "video": {
+        "codec": "h264",
+        "width": 3840,
+        "height": 2160,
+        "fps": 25.0
+      },
+      "fps": 25.0,
+      "size": [
+        3840,
+        2160
+      ],
+      "audio": {
+        "codec": "pcm_s16be",
+        "sampleRate": 48000,
+        "channels": 2
+      }
+    },
+    {
+      "id": "audio/ZOOM0030.WAV",
+      "kind": "audio",
+      "filename": "ZOOM0030.WAV",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/audio /ZOOM0030.WAV",
+      "assetPath": "assets/audio/ZOOM0030.WAV",
+      "duration": 4138.945306,
+      "sizeBytes": 730142720,
+      "fps": null,
+      "size": null,
+      "audio": {
+        "codec": "pcm_s16le",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    },
+    {
+      "id": "audio/ZOOM0031.WAV",
+      "kind": "audio",
+      "filename": "ZOOM0031.WAV",
+      "path": "/Users/rifaterdemsahin/Movies/sixth from first session/production/audio /ZOOM0031.WAV",
+      "assetPath": "assets/audio/ZOOM0031.WAV",
+      "duration": 4017.123265,
+      "sizeBytes": 708653312,
+      "fps": null,
+      "size": null,
+      "audio": {
+        "codec": "pcm_s16le",
+        "sampleRate": 44100,
+        "channels": 2
+      }
+    }
+  ]
+}

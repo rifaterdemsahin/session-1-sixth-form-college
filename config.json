@@ -1,0 +1,17 @@
+{
+  "footageRoot": "~/Movies/sixth from first session/production",
+  "folders": {
+    "screen": "screencapture",
+    "aroll": "aroll",
+    "audio": "audio "
+  },
+  "ignore": [
+    "ZOOM0032.WAV",
+    ".DS_Store"
+  ],
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  }
+}

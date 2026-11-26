@@ -1,0 +1,78 @@
+{
+  "classroomUrl": "https://www.skool.com/delivery-pilot-8938/classroom/781f28c5",
+  "folderName": "2026 - November 25",
+  "chapters": [
+    {
+      "index": 1,
+      "id": "01-welcome-setup",
+      "title": "01. Welcome, Course Setup & Portal Access",
+      "videoPath": "renders/chapters/01-welcome-setup.mp4",
+      "durationMin": 10.21,
+      "description": "Introduction to Session 1 of the Sixth Form College AI Training Course. Covers presenter welcome, how to access the course portal and shared credentials, and what to expect across upcoming sessions."
+    },
+    {
+      "index": 2,
+      "id": "02-docs-qr-skool",
+      "title": "02. Shared Docs, QR Codes & Community Onboarding",
+      "videoPath": "renders/chapters/02-docs-qr-skool.mp4",
+      "durationMin": 14.79,
+      "description": "Hands-on onboarding into the shared workspace and Skool community. Demonstrates generating QR codes for fast link sharing, joining the classroom, and using open chat for Q&A and troubleshooting."
+    },
+    {
+      "index": 3,
+      "id": "03-live-collab-race",
+      "title": "03. Live Collaboration & Rapid AI Skills (RACE)",
+      "videoPath": "renders/chapters/03-live-collab-race.mp4",
+      "durationMin": 9.80,
+      "description": "Exploring live cursor-follow collaboration and the RACE framework (Rapid AI Increases Skills Expectations) — why hands-on classroom practice matters as AI capabilities accelerate."
+    },
+    {
+      "index": 4,
+      "id": "04-agent-harnesses-claude",
+      "title": "04. AI Agent Harnesses, Claude Models & Building Agents",
+      "videoPath": "renders/chapters/04-agent-harnesses-claude.mp4",
+      "durationMin": 14.93,
+      "description": "Understanding AI agent harnesses (why a model needs tools, arms, and legs to act), how Anthropic's Claude models power real-world agents, and why you should start by running proven agent tools before building your own from scratch."
+    },
+    {
+      "index": 5,
+      "id": "05-bots-vs-agents",
+      "title": "05. Bots vs. Agents — Mindset & Multi-Role Workflows",
+      "videoPath": "renders/chapters/05-bots-vs-agents.mp4",
+      "durationMin": 16.31,
+      "description": "Part 2 kicks off with the core mindset shift between general-purpose bots and focused agents, understanding day-one compute/subscription economics, and orchestrating multiple specialized roles working together simultaneously."
+    },
+    {
+      "index": 6,
+      "id": "06-specialized-bots",
+      "title": "06. Designing Specialized Bots (SEO, Radar & Content)",
+      "videoPath": "renders/chapters/06-specialized-bots.mp4",
+      "durationMin": 15.00,
+      "description": "Walkthrough of practical bot architectures you can create — including Keyword Topic Radar, AI Answer, Technical SEO Crawl Monitor, and Traffic Drop alerts — and how reusable agents differ from custom company bots."
+    },
+    {
+      "index": 7,
+      "id": "07-ai-building-ai",
+      "title": "07. AI Building AI — Cost Per Goal & Multi-Model Keys",
+      "videoPath": "renders/chapters/07-ai-building-ai.mp4",
+      "durationMin": 15.00,
+      "description": "Entering the era of AI building AI: evaluating Cost Per Goal to build viable digital businesses, managing API keys across an omni-model system (including DeepInfra), and balancing model pricing vs. output quality."
+    },
+    {
+      "index": 8,
+      "id": "08-scaling-300-agents",
+      "title": "08. Scaling to 300 Agents & Real-World Bot Walkthrough",
+      "videoPath": "renders/chapters/08-scaling-300-agents.mp4",
+      "durationMin": 11.07,
+      "description": "What happens when you scale up to 300 agents (compute limits, goal prioritization, and task boards) plus a live walkthrough of how structured titles and prompts drive autonomous bot actions."
+    },
+    {
+      "index": 9,
+      "id": "09-digital-equity-wrapup",
+      "title": "09. Digital Equity, Bot Specs & Live Approval Wrap-Up",
+      "videoPath": "renders/chapters/09-digital-equity-wrapup.mp4",
+      "durationMin": 7.94,
+      "description": "Closing wrap-up covering digital agents, digital equity, and digital businesses, reviewing bot specifications, and seeing an autonomous bot approve a live classroom access request in real time."
+    }
+  ]
+}

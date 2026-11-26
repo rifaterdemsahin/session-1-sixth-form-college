@@ -1,6 +1,8 @@
 .DS_Store
 .cache/
 edit/assets/
+edit/.hyperframes/
+edit/sample-preview.html
 renders/
 *.mp4
 *.MP4

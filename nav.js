@@ -6,6 +6,7 @@
     { href: "recommendations.html", label: "🎯 Recommendations" },
     { href: "render.html", label: "🎬 Render Hub" },
     { href: "performance.html", label: "⚡ Performance" },
+    { href: "result.html", label: "🏁 End Result" },
   ];
 
   const path = window.location.pathname.split("/").pop() || "index.html";

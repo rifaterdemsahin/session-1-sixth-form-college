@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🏁 End Result — Session 1 (Sixth Form College)</title>
+  <meta name="description" content="Final deliverables, video players, Google Drive backup, and acceptance verification for Session 1." />
+  <style>
+    :root {
+      --bg: #0f1117; --fg: #f1f5f9; --muted: #94a3b8; --card: #181c26;
+      --line: #293040; --accent: #dc2626; --ok: #16a34a; --warn: #d97706;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 18px 72px; }
+    .hero {
+      background: linear-gradient(135deg, #181c26 0%, #1f1419 100%);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--accent);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: -.02em; }
+    .hero p { margin: 0 0 16px; color: var(--muted); }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: 14px; border: 1px solid var(--line); color: var(--fg);
+      background: #232838;
+    }
+    .btn.primary { background: var(--accent); border-color: #ef4444; color: #fff; }
+    .btn:hover { opacity: 0.92; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 18px 0 28px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px;
+    }
+    .card h2 { margin: 0 0 8px; font-size: 17px; }
+    .card p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+    video { width: 100%; border-radius: 10px; background: #000; display: block; margin-top: 10px; }
+    .pill {
+      display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 999px; margin-left: 6px; vertical-align: middle;
+    }
+    .pill.ok { background: #14532d; color: #86efac; }
+    .pill.pending { background: #451a03; color: #fcd34d; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; margin-top: 12px; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; }
+    th { background: #232838; }
+    code { background: #232838; padding: 2px 6px; border-radius: 4px; font-size: 12.5px; }
+    .diagram-box {
+      margin: 18px 0 24px; padding: 18px; background: var(--card);
+      border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; text-align: center;
+    }
+    .diagram-box svg { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+  <main class="wrap">
+    <section class="hero">
+      <h1>🏁 Session 1 — End Result &amp; Deliverables</h1>
+      <p>Sixth Form College AI Training Course · Built with HyperFrames (<code>0.9.96</code>) · OBS Screen Primary · Zoom H1n Audio Only (−16 LUFS) · 16 Approved ZV-1 A-Roll Ranges · Red &amp; White Animated Titles.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://drive.google.com/open?id=1CohNKnPCgUFwC3-XNbnciCG87jkNR5QL" target="_blank" rel="noopener">☁️ Open Google Drive Backup</a>
+        <a class="btn" href="render.html">🎬 Open Render Hub</a>
+        <a class="btn" href="edit/sync.json">🎯 View sync.json</a>
+        <a class="btn" href="edit/aroll_usable.json">👤 View Approved A-Roll</a>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom: 24px;">
+      <h2>🎬 Master Video Output <span id="master-badge" class="pill pending">Awaiting Phase E Final Render</span></h2>
+      <p id="master-note">Showing the verified 15-second HyperFrames sample render (<code>renders/preview/session-1-preview.mp4</code>) while Phase C–E completes. Once <code>renders/session-1-final.mp4</code> is rendered, this player automatically loads the full master.</p>
+      <video id="master-video" controls preload="metadata" src="renders/preview/session-1-preview.mp4"></video>
+    </section>
+
+    <h2>📦 Deliverable Package</h2>
+    <div class="diagram-box">
+      <div class="mermaid">
+flowchart LR
+    EDL["📄 edit/edl.json\nSingle Source of Truth"] --> FINAL["🎬 renders/session-1-final.mp4\nFull Session (YouTube / Archive)"]
+    EDL --> CH["📂 renders/chapters/*.mp4\nPer-Chapter MP4s (College VLE)"]
+    FINAL --> GD["☁️ Google Drive Backup\ngdrive-shared:secondbrain/backups/\nsession-1-sixth-form-college/renders"]
+    CH --> GD
+    PREV["⚡ renders/preview/session-1-preview.mp4\n15s Verified Sample"] --> GD
+      </div>
+    </div>
+
+    <h2>✅ Acceptance Checklist (PLAN.md §5)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Status</th>
+          <th>Evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Every source file synced with confidence ≥ 8</td>
+          <td><span class="pill ok">Done</span></td>
+          <td>22/22 files in <code>edit/sync.json</code> (`z = 24.0–219.9`, 0 flagged, drift ≤ 0.16 f)</td>
+        </tr>
+        <tr>
+          <td>Lip sync within ±1 frame at 3 points</td>
+          <td><span class="pill ok">Approved</span></td>
+          <td>Verified via <code>renders/sync_check/sync_check_{1_start,2_middle,3_end}.mp4</code> (Checkpoint a)</td>
+        </tr>
+        <tr>
+          <td>Only Zoom H1n audio audible (−16 LUFS, 80 Hz HPF)</td>
+          <td><span class="pill ok">Done</span></td>
+          <td>Every <code>&lt;video&gt;</code> muted; normalized <code>ZOOM0030.m4a</code> &amp; <code>ZOOM0031.m4a</code></td>
+        </tr>
+        <tr>
+          <td>A-roll only in human-approved ranges</td>
+          <td><span class="pill ok">Approved</span></td>
+          <td>16 active-speech ranges approved in <code>edit/aroll_usable.json</code> (Checkpoint b)</td>
+        </tr>
+        <tr>
+          <td><code>edit/index.html</code> generated from <code>edl.json</code> &amp; passes lint/check</td>
+          <td><span class="pill pending">In Progress</span></td>
+          <td>Generator verified at 0 errors / 0 warnings on <code>sample-preview.html</code>; awaiting Phase C–D</td>
+        </tr>
+        <tr>
+          <td>Full master + per-chapter renders delivered &amp; backed up</td>
+          <td><span class="pill pending">In Progress</span></td>
+          <td>Sample + sync clips backed up to Google Drive; full render in Phase E</td>
+        </tr>
+        <tr>
+          <td>No media files committed to git</td>
+          <td><span class="pill ok">Verified</span></td>
+          <td><code>*.mp4, *.mov, *.mkv, *.wav, renders/, edit/assets/</code> gitignored on every commit</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: "dark", securityLevel: "loose" });
+    fetch("renders/session-1-final.mp4", { method: "HEAD" })
+      .then((r) => {
+        if (r.ok) {
+          document.getElementById("master-video").src = "renders/session-1-final.mp4";
+          const b = document.getElementById("master-badge");
+          b.textContent = "Final Master Ready";
+          b.className = "pill ok";
+          document.getElementById("master-note").innerHTML =
+            "Playing <code>renders/session-1-final.mp4</code> — full rendered master from <code>edit/edl.json</code>.";
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

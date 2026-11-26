@@ -5,6 +5,7 @@
     { href: "improvements.html", label: "✨ Improvements" },
     { href: "recommendations.html", label: "🎯 Recommendations" },
     { href: "render.html", label: "🎬 Render Hub" },
+    { href: "eta.html", label: "⏱️ Live ETA" },
     { href: "performance.html", label: "⚡ Performance" },
     { href: "result.html", label: "🏁 End Result" },
   ];

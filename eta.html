@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>⏱️ Live Render ETA &amp; Progress — Session 1</title>
+  <meta name="description" content="Live render completion estimate and per-chapter progress tracker for Session 1." />
+  <style>
+    :root {
+      --bg: #0f1117; --fg: #f1f5f9; --muted: #94a3b8; --card: #181c26;
+      --line: #293040; --accent: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 18px 72px; }
+    .hero {
+      background: linear-gradient(135deg, #181c26 0%, #231317 100%);
+      border: 1px solid var(--line); border-left: 6px solid var(--accent);
+      border-radius: 14px; padding: 24px; margin-bottom: 22px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: -.02em; }
+    .hero p { margin: 0; color: var(--muted); }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 20px 0 26px; }
+    .kpi {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px;
+    }
+    .kpi .label { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .kpi .val { font-size: 24px; font-weight: 800; margin-top: 4px; color: #ffffff; }
+    .kpi .sub { font-size: 12.5px; color: #fca5a5; margin-top: 2px; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; font-size: 14px; margin-top: 12px; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; }
+    th { background: #232838; }
+    code { background: #232838; padding: 2px 6px; border-radius: 4px; font-size: 12.5px; }
+    .pill {
+      display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 999px;
+    }
+    .pill.done { background: #14532d; color: #86efac; }
+    .pill.running { background: #7f1d1d; color: #fecaca; }
+    .pill.queued { background: #1e293b; color: #94a3b8; }
+    .diagram-box {
+      margin: 22px 0; padding: 18px; background: var(--card);
+      border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; text-align: center;
+    }
+    .diagram-box svg { max-width: 100%; height: auto; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+  <main class="wrap">
+    <section class="hero">
+      <h1>⏱️ Live Render ETA &amp; Chapter Progress</h1>
+      <p>Calibrated from Apple M1 Max hardware GPU capture on Chapter 1 (`~1.15×` real-time). This page auto-checks rendered files every 30 seconds.</p>
+    </section>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Estimated Finish (UTC)</div>
+        <div class="val">02:50 – 03:25</div>
+        <div class="sub">Started 00:29 UTC</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Render Window</div>
+        <div class="val">2h 15m – 2h 40m</div>
+        <div class="sub">115.05 min edited video @ 1080p30</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Completed Chapters</div>
+        <div class="val" id="done-count">0 / 9</div>
+        <div class="sub" id="final-status">Final master: queued</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Free Disk Space</div>
+        <div class="val">126 GiB</div>
+        <div class="sub">Standard quality (~5 GB total)</div>
+      </div>
+    </div>
+
+    <h2>📊 Per-Chapter Render Queue</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Chapter</th>
+          <th>Duration</th>
+          <th>Est. Render</th>
+          <th>Output File</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="chapter-rows"></tbody>
+    </table>
+    <p class="note" id="last-checked">Checking rendered outputs…</p>
+
+    <h2>🗺️ Final Delivery Schedule</h2>
+    <div class="diagram-box">
+      <div class="mermaid">
+flowchart LR
+    C1["🎬 Chapters 1–4\n(Part 1 · 49.7m)\n~60m render"] --> C2["🎬 Chapters 5–9\n(Part 2 · 65.3m)\n~85m render"]
+    C2 --> CAT["🔗 ffmpeg concat\nsession-1-final.mp4\n~1m"]
+    CAT --> VER["✅ ffprobe &amp; Sync Check\n+ Google Drive Backup\n~8m"]
+    VER --> FLY["🚀 fly deploy &amp;\nOpen End Result\n~2m"]
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: "dark", securityLevel: "loose" });
+
+    const CHAPTERS = [
+      { id: "01-welcome-setup", title: "Welcome, Course Setup & Portal Access", min: 10.21, est: "~12m" },
+      { id: "02-docs-qr-skool", title: "Shared Docs, QR Codes & Community Onboarding", min: 14.79, est: "~18m" },
+      { id: "03-live-collab-race", title: "Live Collaboration & Rapid AI Skills (RACE)", min: 9.80, est: "~12m" },
+      { id: "04-agent-harnesses-claude", title: "AI Agent Harnesses, Claude Models & Building Agents", min: 14.93, est: "~18m" },
+      { id: "05-bots-vs-agents", title: "Bots vs. Agents — Mindset & Multi-Role Workflows", min: 16.31, est: "~22m" },
+      { id: "06-specialized-bots", title: "Designing Specialized Bots (SEO, Radar & Content)", min: 15.00, est: "~20m" },
+      { id: "07-ai-building-ai", title: "AI Building AI — Cost Per Goal & Multi-Model Keys", min: 15.00, est: "~18m" },
+      { id: "08-scaling-300-agents", title: "Scaling to 300 Agents & Real-World Bot Walkthrough", min: 11.07, est: "~15m" },
+      { id: "09-digital-equity-wrapup", title: "Digital Equity, Bot Specs & Live Approval Wrap-Up", min: 7.94, est: "~12m" },
+    ];
+
+    async function refreshStatus() {
+      const tbody = document.getElementById("chapter-rows");
+      let done = 0;
+      let firstPendingMarked = false;
+      const rows = [];
+
+      for (let i = 0; i < CHAPTERS.length; i++) {
+        const ch = CHAPTERS[i];
+        const path = `renders/chapters/${ch.id}.mp4`;
+        let ok = false;
+        let sizeStr = "";
+        try {
+          const r = await fetch(path, { method: "HEAD", cache: "no-store" });
+          if (r.ok) {
+            ok = true;
+            const len = Number(r.headers.get("content-length") || 0);
+            if (len > 0) sizeStr = ` (${(len / (1024 * 1024)).toFixed(1)} MB)`;
+          }
+        } catch {}
+
+        let badge = "";
+        if (ok) {
+          done++;
+          badge = `<span class="pill done">Done${sizeStr}</span>`;
+        } else if (!firstPendingMarked) {
+          firstPendingMarked = true;
+          badge = `<span class="pill running">Rendering…</span>`;
+        } else {
+          badge = `<span class="pill queued">Queued</span>`;
+        }
+
+        rows.push(`<tr>
+          <td>${i + 1}</td>
+          <td>${ch.title}</td>
+          <td>${ch.min.toFixed(2)} min</td>
+          <td>${ch.est}</td>
+          <td><code>${path}</code></td>
+          <td>${badge}</td>
+        </tr>`);
+      }
+
+      tbody.innerHTML = rows.join("");
+      document.getElementById("done-count").textContent = `${done} / ${CHAPTERS.length}`;
+
+      try {
+        const rf = await fetch("renders/session-1-final.mp4", { method: "HEAD", cache: "no-store" });
+        if (rf.ok) {
+          const len = Number(rf.headers.get("content-length") || 0);
+          document.getElementById("final-status").textContent =
+            `Final master: READY (${(len / (1024 * 1024)).toFixed(1)} MB)`;
+        }
+      } catch {}
+
+      document.getElementById("last-checked").textContent =
+        `Last checked: ${new Date().toLocaleTimeString()} (auto-refreshes every 30s)`;
+    }
+
+    refreshStatus();
+    setInterval(refreshStatus, 30000);
+  </script>
+</body>
+</html>

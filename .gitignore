@@ -2,6 +2,7 @@
 .cache/
 edit/assets/
 edit/.hyperframes/
+edit/.thumbnails/
 edit/sample-preview.html
 renders/
 *.mp4

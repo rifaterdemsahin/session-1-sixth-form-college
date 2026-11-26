@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Phase 3 — Transcribe both Zoom H1n WAV files with whisper and merge into edit/transcript.json (master time).
+# Phase 3 — Transcribe both Zoom H1n tracks (normalized -16 LUFS if available) with whisper -> edit/transcript.json.
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -8,17 +8,21 @@ MODEL="${WHISPER_MODEL:-base.en}"
 
 mkdir -p "${OUT_DIR}"
 
-for WAV in "${REPO_ROOT}/edit/assets/audio/ZOOM0030.WAV" "${REPO_ROOT}/edit/assets/audio/ZOOM0031.WAV"; do
-  BASE="$(basename "${WAV}" .WAV)"
+for BASE in ZOOM0030 ZOOM0031; do
   JSON_OUT="${OUT_DIR}/${BASE}.json"
   if [[ -f "${JSON_OUT}" ]]; then
     echo "Skipping ${BASE} (cached at ${JSON_OUT})"
     continue
   fi
-  echo "=== Transcribing ${BASE} with whisper (model=${MODEL}) ==="
-  whisper "${WAV}" \
+  SRC="${REPO_ROOT}/edit/assets/audio_norm/${BASE}.m4a"
+  if [[ ! -f "${SRC}" ]]; then
+    SRC="${REPO_ROOT}/edit/assets/audio/${BASE}.WAV"
+  fi
+  echo "=== Transcribing ${BASE} from $(basename "${SRC}") with whisper (model=${MODEL}) ==="
+  whisper "${SRC}" \
     --model "${MODEL}" \
     --language en \
+    --condition_on_previous_text False \
     --word_timestamps True \
     --output_format json \
     --output_dir "${OUT_DIR}" \

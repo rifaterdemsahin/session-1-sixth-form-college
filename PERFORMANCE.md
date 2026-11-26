@@ -28,9 +28,10 @@ flowchart LR
 | 👁️ **Phase 2: A-Roll Scan** | `scripts/presence.py` | 3,810 keyframes across 94 GB 4K (`C1201` + `C1202`) | **8 m 30 s** | **5.2× speedup** via 8 parallel chunk workers (vs. ~44 min single-threaded) |
 | 🔊 **Phase 5: Audio Polish** | `scripts/polish_audio.py` | Two-pass `-16 LUFS` + 80 Hz HPF on 2h 16m WAV → M4A | **12 m 30 s** | Ran in parallel with Whisper; saved >1.1 GB vs. WAV (`252 MB` total) |
 | 📝 **Phase 3: Whisper** | `scripts/transcribe.sh` | `base.en` CPU on 2h 16m audio | **17 m 30 s** | Part 1 re-run on normalized `-16 LUFS` audio (~3.5 m) to avoid quiet-audio loop |
-| ⚡ **HyperFrames Sample** | `hyperframes render` (`draft`) | 15 s 1080p @ 30fps (OBS + PiP + GSAP title + audio) | **51.0 s** | `3.4×` real-time (37.1 s extract + 10.2 s capture + 0.4 s assemble · `1.2 MB`) |
-| ☁️ **Google Drive Backup** | `scripts/backup_gdrive.py` | Azure Key Vault lookup + `rclone copy` (`3.0 MB`) | **45 s** | Verified via `rclone ls` + share link |
-| **Total Active Compute** | — | End-to-end automated pipeline (excl. human review pauses) | **~30 min** | Total wall clock incl. checkpoints & docs: **~1h 09m** |
+| ⚡ **HyperFrames Sample** | `hyperframes render` (`draft`) | 15 s 1080p @ 30fps (OBS + PiP + GSAP title + audio) | **51.0 s** | `3.4×` real-time (`1.2 MB`) |
+| 🎬 **Phase E: Full Render** | `scripts/render.py` (`standard`) | All 9 chapters (`115.05 min`) + `session-1-final.mp4` | **1 h 52 m 03 s** | **`0.97×` real-time** on Apple M1 Max GPU (`742.9 MB` final) |
+| ☁️ **Google Drive Backup** | `scripts/backup_gdrive.py` | Azure Key Vault lookup + `rclone copy` (`renders/`) | **~2–4 min** | Verified via `rclone ls` + share link |
+| **Total Active Compute** | — | End-to-end automated pipeline (excl. human review pauses) | **~2 h 22 m** | Total wall clock (`22:55` → `02:22 UTC`) incl. checkpoints & docs: **~3 h 26 m** |
 
 ---
 

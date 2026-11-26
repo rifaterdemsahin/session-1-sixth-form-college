@@ -146,17 +146,25 @@ Rules:
 5. Spot-check sync at the start, middle and end of the final file.
 
 ## 5. Acceptance criteria
-- [ ] Every source file has a `sync.json` entry with confidence ≥ 8 (or a documented manual offset).
-- [ ] Lip sync within ±1 frame at three points of the final render.
-- [ ] Only Zoom H1n audio is audible. No camera or OBS audio bleeds into the mix.
-- [ ] Screen capture is on screen for the whole video except approved A-roll cutaways.
-- [ ] A-roll only appears in human-approved ranges where the presenter is in frame.
-- [ ] `edit/index.html` is regenerated from `edl.json` (never hand-edited) and passes `npm run check`.
-- [ ] No media files committed to git.
+- [x] Every source file has a `sync.json` entry with confidence ≥ 8 (or a documented manual offset). — **Evidence:** `edit/sync.json` (22/22 files synced via `uv run scripts/sync.py`, `flaggedCount: 0`, z-scores `24.00–219.87`, ZV-1 drift `-6.35 ms` / `-3.29 ms` = `≤ 0.16` frames over 60+ min, `rate: 1.0`).
+- [x] Lip sync within ±1 frame at three points of the final render. — **Evidence:** 3 × 10 s verification clips (`renders/sync_check/sync_check_{1_start,2_middle,3_end}.mp4` at master `411.93 s`, `4579.31 s`, `8248.49 s`) visually approved in Google Chrome at Checkpoint a; drift measured across 5 windows per camera file (`-1.24 ms` to `+8.15 ms` = `±0.2` frames).
+- [x] Only Zoom H1n audio is audible. No camera or OBS audio bleeds into the mix. — **Evidence:** `scripts/build.py` sets `muted` on every `<video>` tag and emits `<audio>` exclusively from `ZOOM0030.m4a` / `ZOOM0031.m4a` (two-pass `-16 LUFS` + 80 Hz HPF via `scripts/polish_audio.py`); `ffprobe` confirms `audio_streams=1` on all 9 chapter MP4s and `renders/session-1-final.mp4`.
+- [x] Screen capture is on screen for the whole video except approved A-roll cutaways. — **Evidence:** `edit/edl.json` (9 chapters, `6,902.98 s` = `115.05 min`) uses `screen` or `screen+pip` everywhere except the 4 approved closing cutaways (`R27–R30`, `48 s` total).
+- [x] A-roll only appears in human-approved ranges where the presenter is in frame. — **Evidence:** `edit/aroll_usable.json` (`30` candidate ranges detected via `scripts/presence.py`, `16` active-speech ranges approved at Checkpoint b: `R10–R13, R15–R16, R19–R20, R22–R24, R26–R30`, `280.0 s` total); automated verification confirmed `0` unapproved A-roll segments in `edit/edl.json`.
+- [x] `edit/index.html` is regenerated from `edl.json` (never hand-edited) and passes `npm run check`. — **Evidence:** `uv run scripts/build.py` generates `edit/index.html` + `edit/compositions/chapter-01.html`…`09.html`; `cd edit && npm run check` passed with **0 errors, 0 warnings** across Lint, Runtime, Layout (9 samples), Motion, Craft, and Audio.
+- [x] No media files committed to git. — **Evidence:** `.gitignore` ignores `*.mp4, *.MP4, *.mov, *.MOV, *.mkv, *.MKV, *.wav, *.WAV, renders/, edit/assets/, edit/.hyperframes/, edit/.thumbnails/, .cache/`; verified with `git status` before every commit.
 
-## 6. Open questions for the presenter
-1. Output target: one long video, or chapters (e.g. for YouTube or the college's VLE)?
-2. Is there a clap or another clear sync point in the recording? (Needed only if OBS has no room audio.)
-3. Preferred A-roll treatment: PiP bubble, full cutaways, or both?
-4. Branding: college name, logo or colours for title cards and lower-thirds?
-5. Remove student voices or faces for privacy? (They affect the transcript, captions and A-roll choice.)
+## 6. Actual Execution Summary & Deviations from Initial Plan
+
+- **Completed deliverables (reproducible from `edit/edl.json` alone):**
+  - `renders/session-1-final.mp4` (`742.9 MB`, `6903.12 s` = `115.05 min`, `1920×1080 @ 30 fps`, 1 audio stream)
+  - 9 per-chapter MP4s in `renders/chapters/01-welcome-setup.mp4` … `09-digital-equity-wrapup.mp4` (`742 MB` combined)
+  - Backed up to Google Drive via Azure Key Vault (`scripts/backup_gdrive.py`) → `gdrive-shared:secondbrain/backups/session-1-sixth-form-college/renders`
+- **Deviations & improvements applied:**
+  1. **Chapter compositions moved to `edit/compositions/chapter-NN.html`:** HyperFrames `0.9.96` `npm run check` flags `multiple_root_compositions` if chapter HTML files live beside `edit/index.html`. Moving them to `edit/compositions/` achieved 0 errors, 0 warnings.
+  2. **Chapter output directory:** Rendered per-chapter files to `renders/chapters/<chapter-id>.mp4` (matching prompt goal) and concatenated with `ffmpeg -f concat -c copy` to `renders/session-1-final.mp4`.
+  3. **Audio polish format:** Two-pass `-16 LUFS` + 80 Hz HPF (`scripts/polish_audio.py`) saved normalized Zoom H1n tracks as 256 kbps AAC (`edit/assets/audio_norm/ZOOM0030.m4a`, `ZOOM0031.m4a`, `252 MB` total vs. `1.4 GB` WAV) — raw H1n tracks measured `-39.30` and `-40.52 LUFS`, so normalization also resolved Whisper's quiet-audio hallucination loop on Part 1 (`--condition_on_previous_text False`).
+  4. **Branding & AI-course spelling:** Red & white animated GSAP chapter title cards (28 px+ mobile-readable typography) and domain spelling normalization (`Claude`, `Claude Code`, `Anthropic`, `ChatGPT`, `OpenAI`, `GitHub`, `HyperFrames`) in `scripts/merge_transcript.py`.
+  5. **`autoProxy: false` in `edit/hyperframes.json`:** Prevented multi-gigabyte proxy generation while local disk was initially at `7.6 GiB` free (later freed to `126 GiB`).
+  6. **Web portal & Skool prep:** Added shared navigation (`nav.js`) across `index.html`, `specs.html`, `improvements.html`, `recommendations.html`, `render.html`, `eta.html`, `performance.html`, and `result.html`, plus `edit/skool_chapters.json` for Skool classroom upload under `"2026 - November 25"`.
+  7. **Performance:** Full 115.05-min Phase E render completed in **1 h 52 m 03 s** (`0.97×` real-time on Apple M1 Max hardware GPU). Total end-to-end session wall-clock time (including human review checkpoints & extra docs): **~3 h 26 m** (active compute: **~2 h 22 m**).

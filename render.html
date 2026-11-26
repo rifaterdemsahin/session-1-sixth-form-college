@@ -14,28 +14,15 @@
       margin: 0; background: var(--bg); color: var(--fg);
       font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
     }
-    header { border-bottom: 3px solid var(--accent); background: var(--card); padding: 20px 18px; }
-    .wrap { max-width: 1080px; margin: 0 auto; }
-    .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .eyebrow {
-      background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
-    }
-    nav { display: flex; gap: 8px; flex-wrap: wrap; }
-    nav a {
-      color: var(--fg); text-decoration: none; font-size: 14px;
-      padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px;
-    }
-    nav a:hover { border-color: var(--accent); color: #fca5a5; }
-    main { padding: 24px 18px 64px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 18px 64px; }
     .hero {
-      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      padding: 20px; margin-bottom: 24px;
+      background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--accent);
+      border-radius: 14px; padding: 20px; margin-bottom: 28px;
     }
     .hero h1 { margin: 0 0 6px; font-size: 24px; }
     .hero p { margin: 0 0 14px; color: var(--muted); }
     video { width: 100%; border-radius: 10px; background: #000; display: block; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 14px; }
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px;
     }
@@ -50,41 +37,31 @@
 </head>
 <body>
   <script src="nav.js"></script>
-  <header>
-    <div class="wrap top-bar">
-      <div class="eyebrow">🎬 Session 1 · Render Hub</div>
-      <nav>
-        <a href="index.html">📋 Plan</a>
-        <a href="specs.html">📐 Specs</a>
-        <a href="improvements.html">✨ Improvements</a>
-        <a href="recommendations.html">🎯 Recommendations</a>
-      </nav>
-    </div>
-  </header>
   <main class="wrap">
     <section class="hero">
-      <h1>HyperFrames Sample Render — OBS Screen + Approved PiP (R10) + Red/White Animated Title <span class="badge">Ready</span></h1>
-      <p>Output path: <code>renders/preview/session-1-preview.mp4</code> · 1920×1080 @ 30 fps · Audio: Zoom H1n ONLY (OBS &amp; ZV-1 muted).</p>
-      <video controls preload="metadata" src="renders/preview/session-1-preview.mp4"></video>
+      <h1>🎬 Final Master — Session 1 (115.05 min · 742.9 MB) <span class="badge">Rendered</span></h1>
+      <p>Output path: <code>renders/session-1-final.mp4</code> · 1920×1080 @ 30 fps · Audio: Zoom H1n ONLY (−16 LUFS, 80 Hz HPF) · 16 approved ZV-1 A-roll ranges · Red &amp; white animated titles.</p>
+      <video controls preload="metadata" src="renders/session-1-final.mp4"></video>
     </section>
 
-    <h2>🎯 Phase A — Lip-Sync Verification Clips</h2>
+    <h2>📂 Per-Chapter Renders (9 Chapters — Rebuilt from <code>edit/edl.json</code>)</h2>
     <div class="grid">
-      <div class="card">
-        <h2>Start — Master 00:06:51.93</h2>
-        <p><code>renders/sync_check/sync_check_1_start.mp4</code></p>
-        <video controls preload="metadata" src="renders/sync_check/sync_check_1_start.mp4"></video>
-      </div>
-      <div class="card">
-        <h2>Middle — Master 01:16:19.31</h2>
-        <p><code>renders/sync_check/sync_check_2_middle.mp4</code></p>
-        <video controls preload="metadata" src="renders/sync_check/sync_check_2_middle.mp4"></video>
-      </div>
-      <div class="card">
-        <h2>End — Master 02:17:28.49</h2>
-        <p><code>renders/sync_check/sync_check_3_end.mp4</code></p>
-        <video controls preload="metadata" src="renders/sync_check/sync_check_3_end.mp4"></video>
-      </div>
+      <div class="card"><h2>01. Welcome, Course Setup &amp; Portal Access</h2><p>10.21 min · 83 MB · <code>renders/chapters/01-welcome-setup.mp4</code></p><video controls preload="metadata" src="renders/chapters/01-welcome-setup.mp4"></video></div>
+      <div class="card"><h2>02. Shared Docs, QR Codes &amp; Community Onboarding</h2><p>14.79 min · 141 MB · <code>renders/chapters/02-docs-qr-skool.mp4</code></p><video controls preload="metadata" src="renders/chapters/02-docs-qr-skool.mp4"></video></div>
+      <div class="card"><h2>03. Live Collaboration &amp; Rapid AI Skills (RACE)</h2><p>9.80 min · 55 MB · <code>renders/chapters/03-live-collab-race.mp4</code></p><video controls preload="metadata" src="renders/chapters/03-live-collab-race.mp4"></video></div>
+      <div class="card"><h2>04. AI Agent Harnesses, Claude Models &amp; Building Agents</h2><p>14.93 min · 86 MB · <code>renders/chapters/04-agent-harnesses-claude.mp4</code></p><video controls preload="metadata" src="renders/chapters/04-agent-harnesses-claude.mp4"></video></div>
+      <div class="card"><h2>05. Bots vs. Agents — Mindset &amp; Multi-Role Workflows</h2><p>16.31 min · 81 MB · <code>renders/chapters/05-bots-vs-agents.mp4</code></p><video controls preload="metadata" src="renders/chapters/05-bots-vs-agents.mp4"></video></div>
+      <div class="card"><h2>06. Designing Specialized Bots (SEO, Radar &amp; Content)</h2><p>15.00 min · 81 MB · <code>renders/chapters/06-specialized-bots.mp4</code></p><video controls preload="metadata" src="renders/chapters/06-specialized-bots.mp4"></video></div>
+      <div class="card"><h2>07. AI Building AI — Cost Per Goal &amp; Multi-Model Keys</h2><p>15.00 min · 79 MB · <code>renders/chapters/07-ai-building-ai.mp4</code></p><video controls preload="metadata" src="renders/chapters/07-ai-building-ai.mp4"></video></div>
+      <div class="card"><h2>08. Scaling to 300 Agents &amp; Real-World Bot Walkthrough</h2><p>11.07 min · 54 MB · <code>renders/chapters/08-scaling-300-agents.mp4</code></p><video controls preload="metadata" src="renders/chapters/08-scaling-300-agents.mp4"></video></div>
+      <div class="card"><h2>09. Digital Equity, Bot Specs &amp; Live Approval Wrap-Up</h2><p>7.94 min · 83 MB · <code>renders/chapters/09-digital-equity-wrapup.mp4</code></p><video controls preload="metadata" src="renders/chapters/09-digital-equity-wrapup.mp4"></video></div>
+    </div>
+
+    <h2 style="margin-top: 32px;">🎯 Phase A — Lip-Sync Verification Clips</h2>
+    <div class="grid">
+      <div class="card"><h2>Start — Master 00:06:51.93</h2><p><code>renders/sync_check/sync_check_1_start.mp4</code></p><video controls preload="metadata" src="renders/sync_check/sync_check_1_start.mp4"></video></div>
+      <div class="card"><h2>Middle — Master 01:16:19.31</h2><p><code>renders/sync_check/sync_check_2_middle.mp4</code></p><video controls preload="metadata" src="renders/sync_check/sync_check_2_middle.mp4"></video></div>
+      <div class="card"><h2>End — Master 02:17:28.49</h2><p><code>renders/sync_check/sync_check_3_end.mp4</code></p><video controls preload="metadata" src="renders/sync_check/sync_check_3_end.mp4"></video></div>
     </div>
   </main>
 </body>

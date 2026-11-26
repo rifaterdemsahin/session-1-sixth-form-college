@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1920, height=1080" />
-  <title>Session 1 — AI Agent Harnesses, Claude Models &amp; Building Agents</title>
+  <title>Session 1 — AI Building AI — Cost Per Goal &amp; Multi-Model Keys</title>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,17 +78,17 @@
     .ch-eyebrow {
       display: inline-block;
       align-self: flex-start;
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      font-size: 28px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       background: #dc2626;
       color: #ffffff;
-      padding: 3px 10px;
+      padding: 4px 16px;
       border-radius: 999px;
       font-weight: 700;
     }
     .ch-title {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 800;
       line-height: 1.2;
       color: #991b1b;
@@ -103,29 +103,26 @@
        data-width="1920"
        data-height="1080"
        data-fps="30"
-       data-duration="896.09">
+       data-duration="900.0">
     <div id="video-layer">
-      <video id="screen-0" class="clip screen" src="assets/screen/2026-11-25_18-40-08.mp4" muted playsinline preload="auto" data-start="0.0" data-duration="157.93" data-media-start="105.6815" data-track-index="0"></video>
-      <video id="screen-1" class="clip screen" src="assets/screen/2026-11-25_18-40-08.mp4" muted playsinline preload="auto" data-start="157.93" data-duration="10.0" data-media-start="263.6115" data-track-index="0"></video>
-      <video id="aroll-2" class="clip pip" src="assets/aroll/C1201.MP4" muted playsinline preload="auto" data-start="157.93" data-duration="10.0" data-media-start="2858.0027" data-track-index="1"></video>
-      <video id="screen-3" class="clip screen" src="assets/screen/2026-11-25_18-40-08.mp4" muted playsinline preload="auto" data-start="167.93" data-duration="61.94" data-media-start="273.6115" data-track-index="0"></video>
-      <video id="screen-4" class="clip screen" src="assets/screen/2026-11-25_18-40-08.mp4" muted playsinline preload="auto" data-start="229.87" data-duration="132.5552" data-media-start="348.1915" data-track-index="0"></video>
-      <video id="screen-5" class="clip screen" src="assets/screen/2026-11-25_18-48-09.mp4" muted playsinline preload="auto" data-start="362.4252" data-duration="481.495" data-media-start="0.005" data-track-index="0"></video>
-      <video id="screen-6" class="clip screen" src="assets/screen/2026-11-25_18-56-10.mp4" muted playsinline preload="auto" data-start="843.9202" data-duration="52.1698" data-media-start="0.0071" data-track-index="0"></video>
+      <video id="screen-0" class="clip screen" src="../assets/screen/2026-11-25_19-36-35.mp4" muted playsinline preload="auto" data-start="0.0" data-duration="463.1657" data-media-start="19.0176" data-track-index="0"></video>
+      <video id="screen-1" class="clip screen" src="../assets/screen/2026-11-25_19-44-37.mp4" muted playsinline preload="auto" data-start="463.1657" data-duration="364.1443" data-media-start="0.0076" data-track-index="0"></video>
+      <video id="screen-2" class="clip screen" src="../assets/screen/2026-11-25_19-44-37.mp4" muted playsinline preload="auto" data-start="827.31" data-duration="10.0" data-media-start="364.1519" data-track-index="0"></video>
+      <video id="aroll-3" class="clip pip" src="../assets/aroll/C1202.MP4" muted playsinline preload="auto" data-start="827.31" data-duration="10.0" data-media-start="2752.0026" data-track-index="1"></video>
+      <video id="screen-4" class="clip screen" src="../assets/screen/2026-11-25_19-44-37.mp4" muted playsinline preload="auto" data-start="837.31" data-duration="62.69" data-media-start="374.1519" data-track-index="0"></video>
     </div>
     <div id="audio-layer">
-      <audio id="audio-0" src="assets/audio_norm/ZOOM0030.m4a" preload="auto" data-start="0.0" data-duration="157.93" data-media-start="3218.8929" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
-      <audio id="audio-1" src="assets/audio_norm/ZOOM0030.m4a" preload="auto" data-start="157.93" data-duration="10.0" data-media-start="3376.8229" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
-      <audio id="audio-2" src="assets/audio_norm/ZOOM0030.m4a" preload="auto" data-start="167.93" data-duration="61.94" data-media-start="3386.8229" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
-      <audio id="audio-3" src="assets/audio_norm/ZOOM0030.m4a" preload="auto" data-start="229.87" data-duration="666.22" data-media-start="3461.4029" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
+      <audio id="audio-0" src="../assets/audio_norm/ZOOM0031.m4a" preload="auto" data-start="0.0" data-duration="827.31" data-media-start="1952.6311" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
+      <audio id="audio-1" src="../assets/audio_norm/ZOOM0031.m4a" preload="auto" data-start="827.31" data-duration="10.0" data-media-start="2779.9411" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
+      <audio id="audio-2" src="../assets/audio_norm/ZOOM0031.m4a" preload="auto" data-start="837.31" data-duration="62.69" data-media-start="2789.9411" data-volume="1" data-fade-in="0.30" data-fade-out="0.30" data-track-index="2"></audio>
     </div>
     <div id="overlay-layer">
-      <div class="chapter-card" id="card-0"><div class="ch-bar"></div><div class="ch-body"><span class="ch-eyebrow">Chapter 1</span><span class="ch-title">AI Agent Harnesses, Claude Models &amp; Building Agents</span></div></div>
+      <div class="chapter-card" id="card-0"><div class="ch-bar"></div><div class="ch-body"><span class="ch-eyebrow">Chapter 1</span><span class="ch-title">AI Building AI — Cost Per Goal &amp; Multi-Model Keys</span></div></div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.to({}, { duration: 896.09 }, 0);
+    tl.to({}, { duration: 900.0 }, 0);
     tl.fromTo("#card-0", { opacity: 0, x: -36, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 0.0);
     tl.fromTo("#card-0 .ch-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "power2.out" }, 0.08);
     tl.fromTo("#card-0 .ch-title", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.14);

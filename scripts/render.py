@@ -113,7 +113,7 @@ def main() -> int:
     for idx, ch in enumerate(chapters, start=1):
         if args.chapter is not None and idx != args.chapter:
             continue
-        ch_html = EDIT_DIR / f"chapter-{idx:02d}.html"
+        ch_html = EDIT_DIR / "compositions" / f"chapter-{idx:02d}.html"
         ch_id = ch.get("id", f"chapter-{idx:02d}")
         out_mp4 = ch_dir / f"{ch_id}.mp4"
         expected_dur = sum(
@@ -126,7 +126,7 @@ def main() -> int:
             "hyperframes@0.9.96",
             "render",
             "-c",
-            ch_html.name,
+            f"compositions/{ch_html.name}",
             "-o",
             str(out_mp4),
             "--quality",

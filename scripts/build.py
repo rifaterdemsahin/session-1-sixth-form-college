@@ -98,6 +98,7 @@ def render_composition_html(
     chapters: list[dict],
     by_kind: dict[str, list[dict]],
     include_chapter_cards: bool = True,
+    asset_prefix: str = "",
 ) -> tuple[str, float]:
     """Generate a HyperFrames HTML composition for the given chapters."""
     video_tags: list[str] = []
@@ -133,7 +134,7 @@ def render_composition_html(
             if layout in ("screen", "screen+pip"):
                 for c in cover_range(by_kind["screen"], m_in, m_out, out_cursor):
                     video_tags.append(
-                        f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                        f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(asset_prefix + c["assetPath"])}" muted playsinline preload="auto" '
                         f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                         f'data-media-start="{c["mediaStart"]}" data-track-index="0"></video>'
                     )
@@ -147,14 +148,14 @@ def render_composition_html(
                     # Safety fallback to screen if A-roll doesn't cover this master range
                     for c in cover_range(by_kind["screen"], m_in, m_out, out_cursor):
                         video_tags.append(
-                            f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                            f'      <video id="screen-{v_idx}" class="clip screen" src="{html.escape(asset_prefix + c["assetPath"])}" muted playsinline preload="auto" '
                             f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                             f'data-media-start="{c["mediaStart"]}" data-track-index="0"></video>'
                         )
                         v_idx += 1
                 for c in ar_clips:
                     video_tags.append(
-                        f'      <video id="aroll-{v_idx}" class="{cls}" src="{html.escape(c["assetPath"])}" muted playsinline preload="auto" '
+                        f'      <video id="aroll-{v_idx}" class="{cls}" src="{html.escape(asset_prefix + c["assetPath"])}" muted playsinline preload="auto" '
                         f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                         f'data-media-start="{c["mediaStart"]}" data-track-index="1"></video>'
                     )
@@ -166,7 +167,7 @@ def render_composition_html(
                 fade_in = min(FADE_SEC, c["duration"] / 3.0) if idx_a == 0 else 0.05
                 fade_out = min(FADE_SEC, c["duration"] / 3.0) if idx_a == len(au_clips) - 1 else 0.05
                 audio_tags.append(
-                    f'      <audio id="audio-{a_idx}" src="{html.escape(c["assetPath"])}" preload="auto" '
+                    f'      <audio id="audio-{a_idx}" src="{html.escape(asset_prefix + c["assetPath"])}" preload="auto" '
                     f'data-start="{c["outStart"]}" data-duration="{c["duration"]}" '
                     f'data-media-start="{c["mediaStart"]}" data-volume="1" '
                     f'data-fade-in="{fade_in:.2f}" data-fade-out="{fade_out:.2f}" '
@@ -276,17 +277,17 @@ def render_composition_html(
     .ch-eyebrow {{
       display: inline-block;
       align-self: flex-start;
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      font-size: 28px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       background: #dc2626;
       color: #ffffff;
-      padding: 3px 10px;
+      padding: 4px 16px;
       border-radius: 999px;
       font-weight: 700;
     }}
     .ch-title {{
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 800;
       line-height: 1.2;
       color: #991b1b;
@@ -355,13 +356,15 @@ def main() -> int:
     (EDIT_DIR / "index.html").write_text(root_html, encoding="utf-8")
     print(f"Generated edit/index.html (total={total_dur:.2f}s, {len(chapters)} chapters)")
 
-    # Remove stale chapter-*.html files
-    for old in EDIT_DIR.glob("chapter-*.html"):
+    # Remove stale chapter-*.html files from root and compositions/
+    comp_dir = EDIT_DIR / "compositions"
+    comp_dir.mkdir(parents=True, exist_ok=True)
+    for old in list(EDIT_DIR.glob("chapter-*.html")) + list(comp_dir.glob("chapter-*.html")):
         old.unlink()
 
-    # Build per-chapter compositions: edit/chapter-NN.html
+    # Build per-chapter compositions: edit/compositions/chapter-NN.html
     for idx, ch in enumerate(chapters, start=1):
-        ch_file = EDIT_DIR / f"chapter-{idx:02d}.html"
+        ch_file = comp_dir / f"chapter-{idx:02d}.html"
         ch_html, ch_dur = render_composition_html(
             title=f"Session 1 — {ch.get('title', ch.get('id', f'Chapter {idx}'))}",
             width=w,
@@ -370,6 +373,7 @@ def main() -> int:
             chapters=[ch],
             by_kind=by_kind,
             include_chapter_cards=True,
+            asset_prefix="../",
         )
         ch_file.write_text(ch_html, encoding="utf-8")
         print(f"  Generated {ch_file.relative_to(REPO_ROOT)} ({ch_dur:.2f}s) — {ch.get('title', '')}")

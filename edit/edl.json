@@ -1,0 +1,344 @@
+{
+  "generatedAt": "2026-11-26T00:20:06",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "totalDurationSec": 6902.98,
+  "arollDurationSec": 280.0,
+  "approvedArollIds": [
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R15",
+    "R16",
+    "R19",
+    "R20",
+    "R22",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R30"
+  ],
+  "chapters": [
+    {
+      "id": "01-welcome-setup",
+      "title": "Welcome, Course Setup & Portal Access",
+      "durationSec": 612.83,
+      "segments": [
+        {
+          "in": 887.17,
+          "out": 1500.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "02-docs-qr-skool",
+      "title": "Shared Docs, QR Codes & Community Onboarding",
+      "durationSec": 887.24,
+      "segments": [
+        {
+          "in": 1500.0,
+          "out": 1675.93,
+          "layout": "screen"
+        },
+        {
+          "in": 1675.93,
+          "out": 1701.93,
+          "layout": "screen+pip",
+          "arollRangeId": "R10"
+        },
+        {
+          "in": 1701.93,
+          "out": 1723.75,
+          "layout": "screen"
+        },
+        {
+          "in": 1736.51,
+          "out": 2263.93,
+          "layout": "screen"
+        },
+        {
+          "in": 2263.93,
+          "out": 2281.93,
+          "layout": "screen+pip",
+          "arollRangeId": "R11"
+        },
+        {
+          "in": 2281.93,
+          "out": 2400.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "03-live-collab-race",
+      "title": "Live Collaboration & Rapid AI Skills (RACE)",
+      "durationSec": 587.96,
+      "segments": [
+        {
+          "in": 2400.0,
+          "out": 2527.35,
+          "layout": "screen"
+        },
+        {
+          "in": 2539.39,
+          "out": 2953.93,
+          "layout": "screen"
+        },
+        {
+          "in": 2953.93,
+          "out": 2963.93,
+          "layout": "screen+pip",
+          "arollRangeId": "R12"
+        },
+        {
+          "in": 2963.93,
+          "out": 3000.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "04-agent-harnesses-claude",
+      "title": "AI Agent Harnesses, Claude Models & Building Agents",
+      "durationSec": 896.09,
+      "segments": [
+        {
+          "in": 3000.0,
+          "out": 3157.93,
+          "layout": "screen"
+        },
+        {
+          "in": 3157.93,
+          "out": 3167.93,
+          "layout": "screen+pip",
+          "arollRangeId": "R13"
+        },
+        {
+          "in": 3167.93,
+          "out": 3229.87,
+          "layout": "screen"
+        },
+        {
+          "in": 3242.51,
+          "out": 3908.73,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "05-bots-vs-agents",
+      "title": "Bots vs. Agents \u2014 Mindset & Multi-Role Workflows",
+      "durationSec": 978.31,
+      "segments": [
+        {
+          "in": 4366.37,
+          "out": 4382.33,
+          "layout": "screen"
+        },
+        {
+          "in": 4402.49,
+          "out": 4727.31,
+          "layout": "screen"
+        },
+        {
+          "in": 4727.31,
+          "out": 4747.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R15"
+        },
+        {
+          "in": 4747.31,
+          "out": 4759.31,
+          "layout": "screen"
+        },
+        {
+          "in": 4759.31,
+          "out": 4783.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R16"
+        },
+        {
+          "in": 4783.31,
+          "out": 4986.65,
+          "layout": "screen"
+        },
+        {
+          "in": 4999.27,
+          "out": 5159.89,
+          "layout": "screen"
+        },
+        {
+          "in": 5182.43,
+          "out": 5400.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "06-specialized-bots",
+      "title": "Designing Specialized Bots (SEO, Radar & Content)",
+      "durationSec": 900.0,
+      "segments": [
+        {
+          "in": 5400.0,
+          "out": 5903.31,
+          "layout": "screen"
+        },
+        {
+          "in": 5903.31,
+          "out": 5941.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R19"
+        },
+        {
+          "in": 5941.31,
+          "out": 6191.31,
+          "layout": "screen"
+        },
+        {
+          "in": 6191.31,
+          "out": 6221.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R20"
+        },
+        {
+          "in": 6221.31,
+          "out": 6300.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "07-ai-building-ai",
+      "title": "AI Building AI \u2014 Cost Per Goal & Multi-Model Keys",
+      "durationSec": 900.0,
+      "segments": [
+        {
+          "in": 6300.0,
+          "out": 7127.31,
+          "layout": "screen"
+        },
+        {
+          "in": 7127.31,
+          "out": 7137.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R22"
+        },
+        {
+          "in": 7137.31,
+          "out": 7200.0,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "08-scaling-300-agents",
+      "title": "Scaling to 300 Agents & Real-World Bot Walkthrough",
+      "durationSec": 664.37,
+      "segments": [
+        {
+          "in": 7200.0,
+          "out": 7417.31,
+          "layout": "screen"
+        },
+        {
+          "in": 7417.31,
+          "out": 7425.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R23"
+        },
+        {
+          "in": 7425.31,
+          "out": 7655.31,
+          "layout": "screen"
+        },
+        {
+          "in": 7655.31,
+          "out": 7673.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R24"
+        },
+        {
+          "in": 7673.31,
+          "out": 7864.37,
+          "layout": "screen"
+        }
+      ]
+    },
+    {
+      "id": "09-digital-equity-wrapup",
+      "title": "Digital Equity, Bot Specs & Live Approval Wrap-Up",
+      "durationSec": 476.18,
+      "segments": [
+        {
+          "in": 7887.57,
+          "out": 8045.31,
+          "layout": "screen"
+        },
+        {
+          "in": 8045.31,
+          "out": 8065.31,
+          "layout": "screen+pip",
+          "arollRangeId": "R26"
+        },
+        {
+          "in": 8065.31,
+          "out": 8107.31,
+          "layout": "screen"
+        },
+        {
+          "in": 8107.31,
+          "out": 8119.31,
+          "layout": "aroll",
+          "arollRangeId": "R27"
+        },
+        {
+          "in": 8119.31,
+          "out": 8299.31,
+          "layout": "screen"
+        },
+        {
+          "in": 8299.31,
+          "out": 8307.31,
+          "layout": "aroll",
+          "arollRangeId": "R28"
+        },
+        {
+          "in": 8307.31,
+          "out": 8315.31,
+          "layout": "screen"
+        },
+        {
+          "in": 8315.31,
+          "out": 8329.31,
+          "layout": "aroll",
+          "arollRangeId": "R29"
+        },
+        {
+          "in": 8329.31,
+          "out": 8349.31,
+          "layout": "screen"
+        },
+        {
+          "in": 8349.31,
+          "out": 8363.31,
+          "layout": "aroll",
+          "arollRangeId": "R30"
+        },
+        {
+          "in": 8363.31,
+          "out": 8363.75,
+          "layout": "screen"
+        }
+      ]
+    }
+  ]
+}
